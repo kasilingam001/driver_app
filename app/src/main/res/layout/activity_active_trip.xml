@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+
+        <TextView
+            style="@style/Heading" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:text="@string/active_trip_title" android:accessibilityHeading="true" />
+
+        <!-- Shown when location permission is missing -->
+        <LinearLayout
+            android:id="@+id/permission_panel" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:background="@drawable/banner_bad" android:orientation="vertical"
+            android:padding="16dp" android:visibility="gone">
+            <TextView style="@style/RowValue" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/permission_title" />
+            <TextView style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:text="@string/permission_body" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/permission_button" android:layout_width="match_parent" android:layout_height="52dp"
+                android:layout_marginTop="12dp" android:text="@string/allow_location" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:background="@drawable/card_bg" android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_bus" />
+                <TextView android:id="@+id/bus_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="K1" />
+            </LinearLayout>
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_route" />
+                <TextView android:id="@+id/route_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="R1 - Vadipatti to College" />
+            </LinearLayout>
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_trip_status" />
+                <TextView android:id="@+id/status_value" style="@style/RowValue" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:background="@drawable/chip_active" android:paddingStart="12dp" android:paddingEnd="12dp"
+                    android:paddingTop="2dp" android:paddingBottom="2dp" android:text="@string/status_active" android:textColor="@color/ok" />
+                <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:background="@drawable/card_bg" android:orientation="vertical"
+            android:padding="16dp" android:accessibilityLiveRegion="polite">
+
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_gps" />
+                <TextView android:id="@+id/gps_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="GPS connected" />
+            </LinearLayout>
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_internet" />
+                <TextView android:id="@+id/net_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="Connected" />
+            </LinearLayout>
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_last_sent" />
+                <TextView android:id="@+id/last_sent_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="4 s ago" />
+            </LinearLayout>
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_sent_count" />
+                <TextView android:id="@+id/sent_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="42" />
+            </LinearLayout>
+            <LinearLayout style="@style/RowBox">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_not_sent_count" />
+                <TextView android:id="@+id/not_sent_value" style="@style/RowValue" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="0" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/lost_row" style="@style/RowBox" android:visibility="gone">
+                <TextView style="@style/RowLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/label_lost" />
+                <TextView android:id="@+id/lost_value" style="@style/RowValue" android:textColor="@color/bad" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" tools:text="Refused: 1, dropped: 0" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/location_settings_button" style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content" android:layout_height="48dp" android:text="@string/open_location_settings"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/RowLabel" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:text="@string/battery_tip" />
+
+        <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/end_button" android:layout_width="match_parent" android:layout_height="60dp"
+            android:layout_marginTop="24dp" android:text="@string/end_trip" android:textSize="18sp"
+            app:backgroundTint="@color/bad" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    </LinearLayout>
+</ScrollView>

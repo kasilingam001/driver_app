@@ -1,0 +1,10 @@
+Build the APK without Android Studio (GitHub Actions)
+1. Create a free GitHub account and a NEW repository (any name, Private is fine).
+2. On the repository page click "uploading an existing file" and drag ALL files and folders from this
+   folder into it, including the hidden ".github" folder. Click "Commit changes".
+3. Open the "Actions" tab. If asked, click "I understand my workflows, enable them".
+4. Click "Build driver APK" on the left, then "Run workflow" (green button) and run it.
+5. Wait about 5-10 minutes until the run has a green tick. Open the run and download
+   "driver-app-debug-apk" from the Artifacts section at the bottom. Unzip it: app-debug.apk is the APK.
+6. Send it to your phone and install it (allow "install from unknown sources").
+If the run shows a red cross, open it, copy the error text and send it to me.

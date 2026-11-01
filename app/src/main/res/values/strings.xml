@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rural Bus Driver</string>
+
+    <!-- Notifications -->
+    <string name="channel_tracking">Trip tracking</string>
+    <string name="channel_alert">Tracking stopped</string>
+    <string name="notification_title">Sharing bus location</string>
+    <string name="notification_text">Bus %1$s, route %2$s. Tap to open.</string>
+    <string name="tracking_stopped">Tracking stopped</string>
+    <string name="stopped_trip_ended">This trip is no longer active. GPS sharing has stopped.</string>
+    <string name="stopped_session_ended">Your login expired. Log in again to continue the trip.</string>
+    <string name="stopped_account_disabled">Your driver account was disabled. Contact the administrator.</string>
+
+    <!-- Login -->
+    <string name="login_title">Driver login</string>
+    <string name="login_subtitle">Sign in with the username and password given by the administrator.</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="server_settings">Server settings</string>
+    <string name="server_address">Server address</string>
+    <string name="server_hint">Emulator: http://10.0.2.2:8000/  Phone on Wi-Fi: http://YOUR-PC-IP:8000/</string>
+    <string name="error_enter_credentials">Enter your username and password.</string>
+    <string name="error_server_url">Enter a valid server address, for example http://192.168.1.20:8000/. Release builds need https.</string>
+
+    <!-- Activation -->
+    <string name="activation_title">Start a trip</string>
+    <string name="activation_hello">Hello, %1$s</string>
+    <string name="activation_subtitle">Enter the 8-digit activation code from the administrator.</string>
+    <string name="activation_code">Activation code</string>
+    <string name="activate_trip">Activate trip</string>
+    <string name="log_out">Log out</string>
+    <string name="error_code_length">The activation code must be exactly 8 digits.</string>
+
+    <!-- Active trip -->
+    <string name="active_trip_title">Trip in progress</string>
+    <string name="label_bus">Bus</string>
+    <string name="label_route">Route</string>
+    <string name="label_trip_status">Trip status</string>
+    <string name="label_gps">GPS</string>
+    <string name="label_internet">Internet</string>
+    <string name="label_last_sent">Last location sent</string>
+    <string name="label_sent_count">Locations sent</string>
+    <string name="label_not_sent_count">Waiting to upload</string>
+    <string name="status_active">ACTIVE</string>
+    <string name="gps_searching">Searching for GPS signal...</string>
+    <string name="gps_connected">GPS connected</string>
+    <string name="gps_connected_accuracy">GPS connected (about %1$d m)</string>
+    <string name="gps_unavailable">GPS unavailable. Turn on Location and go outdoors.</string>
+    <string name="net_waiting">Waiting for the first upload</string>
+    <string name="net_ok">Connected, locations are being sent</string>
+    <string name="net_unavailable">Internet unavailable. Locations are saved on this phone and will be sent when the connection returns.</string>
+    <string name="net_server_problem">Server problem. Locations are saved on this phone and will be sent later.</string>
+    <string name="never">Not yet</string>
+    <string name="seconds_ago">%1$d s ago</string>
+    <string name="minutes_ago">%1$d min ago</string>
+    <string name="end_trip">End trip</string>
+    <string name="end_trip_confirm_title">End this trip?</string>
+    <string name="end_trip_confirm_message">GPS sharing stops and passengers will no longer see this bus.</string>
+    <string name="keep_going">Keep going</string>
+    <string name="ending_trip">Ending trip...</string>
+    <string name="end_trip_failed">The trip could not be ended: %1$s GPS is still running. Try again.</string>
+    <string name="permission_title">Location permission needed</string>
+    <string name="permission_body">The app needs your phone\'s location to share the bus position. Without it passengers cannot see the bus.</string>
+    <string name="allow_location">Allow location</string>
+    <string name="open_app_settings">Open app settings</string>
+    <string name="open_location_settings">Location settings</string>
+    <string name="battery_tip">Tip: keep the phone charging and do not force-stop the app during the trip.</string>
+
+    <!-- Completed -->
+    <string name="completed_title">Trip completed</string>
+    <string name="completed_by_driver">You ended the trip. GPS sharing has stopped.</string>
+    <string name="completed_by_server">This trip is no longer active. The administrator may have completed or cancelled it. GPS sharing has stopped.</string>
+    <string name="completed_locations_sent">Locations sent: %1$d</string>
+    <string name="completed_locations_not_sent">Not delivered: %1$d</string>
+    <string name="start_another">Start another trip</string>
+
+    <string name="session_expired">Your session ended. Please log in again.</string>
+    <string name="loading">Please wait...</string>
+
+    <!-- Phase 14: offline buffering -->
+    <string name="net_uploading_pending">Uploading pending locations (%1$d left)</string>
+    <string name="label_lost">Not delivered</string>
+    <string name="lost_detail">Refused by server: %1$d, dropped (phone buffer full): %2$d</string>
+    <string name="sending_saved_locations">Sending saved locations…</string>
+    <string name="unsent_title">Locations not uploaded yet</string>
+    <string name="unsent_message">%1$d saved locations could not be uploaded because the server cannot be reached. You can keep tracking and end the trip when the connection is back, or end the trip now. Locations that are not uploaded will be lost.</string>
+    <string name="end_anyway">End anyway</string>
+</resources>

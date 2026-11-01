@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+
+        <TextView
+            style="@style/Heading" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="32dp" android:text="@string/login_title" android:accessibilityHeading="true" />
+
+        <TextView
+            style="@style/Body" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:layout_marginBottom="24dp" android:text="@string/login_subtitle" />
+
+        <TextView
+            android:id="@+id/error_text" style="@style/ErrorText"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/banner_bad" android:padding="12dp" android:layout_marginBottom="16dp"
+            android:accessibilityLiveRegion="polite" android:visibility="gone" tools:text="Invalid username or password." tools:visibility="visible" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="@string/username">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_input" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:autofillHints="username" android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions" android:maxLength="150" android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:hint="@string/password"
+            app:endIconMode="password_toggle" xmlns:app="http://schemas.android.com/apk/res-auto">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_input" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:autofillHints="password" android:imeOptions="actionDone"
+                android:inputType="textPassword" android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button" android:layout_width="match_parent" android:layout_height="56dp"
+            android:layout_marginTop="20dp" android:text="@string/log_in" />
+
+        <ProgressBar
+            android:id="@+id/progress" style="?android:attr/progressBarStyleHorizontal" android:indeterminate="true"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/server_toggle" style="@style/RowLabel"
+            android:layout_width="wrap_content" android:layout_height="48dp"
+            android:layout_marginTop="16dp" android:gravity="center_vertical" android:clickable="true" android:focusable="true"
+            android:text="@string/server_settings" android:textColor="@color/brand" android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/server_layout" style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="@string/server_address" android:visibility="gone"
+            xmlns:app="http://schemas.android.com/apk/res-auto" app:helperText="@string/server_hint" app:helperTextEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/server_input" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="textUri" android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</ScrollView>
