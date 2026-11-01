@@ -179,7 +179,8 @@ class TrackingService : Service() {
     private suspend fun uploadLoop(active: ActiveTrip) {
         val app = App.of(this)
         var failures = 0
-        TrackingState.update { it.copy(pendingCount = app.sync.pending(active.tripId)) }
+        val startPending = app.sync.pending(active.tripId)
+        TrackingState.update { it.copy(pendingCount = startPending) }
 
         while (scope.isActive) {
             when (val outcome = app.sync.flushOnce(active)) {
